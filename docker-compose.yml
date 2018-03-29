@@ -1,12 +1,10 @@
 version: '2'
 
-project_name: nodejs_app
-
 services:
   web:
    container_name: node-app-web
    build: .
-   image: node_image
+   image: nodejs_image
    restart: always
    environment:
      - VIRTUAL_HOST=app.vlogz.win
