@@ -7,6 +7,9 @@ RUN chown -R app-user:app-user $HOME/*
 
 USER app-user
 WORKDIR $HOME/app
+
+EXPOSE 3000
+
 RUN npm install
 
 CMD ["node", "app.js"]
