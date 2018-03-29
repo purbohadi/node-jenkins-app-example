@@ -4,11 +4,9 @@ services:
   web:
    container_name: node-app-web
    build: .
-   ports:
-     - '3000:3000'
+   restart: always
    environment:
      - VIRTUAL_HOST=app.vlogz.win
-     - VIRTUAL_PORT=8080
      - LETSENCRYPT_HOST=app.vlogz.win
      - LETSENCRYPT_EMAIL=webmaster@vlogz.win
    volumes:
