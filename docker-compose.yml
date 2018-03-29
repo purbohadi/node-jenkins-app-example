@@ -7,8 +7,14 @@ services:
    restart: always
    environment:
      - VIRTUAL_HOST=app.vlogz.win
+     - VIRTUAL_PORT=3000
      - LETSENCRYPT_HOST=app.vlogz.win
      - LETSENCRYPT_EMAIL=webmaster@vlogz.win
    volumes:
      - .:/home/app-user/app
      - /home/app-user/app/node_modules
+
+networks:
+    default:
+       external:
+         name: reverse-proxy
